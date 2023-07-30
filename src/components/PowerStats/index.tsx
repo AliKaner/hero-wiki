@@ -32,6 +32,7 @@ export function PowerStats({ stats }: { stats: PowerstatsType }) {
       },
     ],
   };
+
   return (
     <div className=" w-72 h-72 text-calm">
       <Radar data={data} />
