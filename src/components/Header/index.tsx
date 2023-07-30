@@ -6,7 +6,7 @@ export function Header(props: React.PropsWithChildren<unknown>) {
 
   return (
     <div
-      className={`flex flex-row w-full p-4 border-b-2 border-action ${
+      className={`flex  min-w-full flex-col xs:flex-row  p-4 border-b-2 border-action ${
         theme ? "bg-primary text-black" : "bg-darkPrimary text-white"
       }`}
     >

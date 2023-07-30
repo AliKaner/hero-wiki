@@ -8,7 +8,7 @@ import { Layout } from "../../components/Layout";
 import HomeButton from "../../components/HomeButton";
 import { PowerStats } from "../../components/PowerStats";
 import { Footer } from "../../components/Footer";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export function HeroPage() {
   const { id } = useParams();
   const [hero, setHero] = useState<HeroType | null>(null);
@@ -34,11 +34,11 @@ export function HeroPage() {
         ) : isError ? (
           <div>Error occurred while fetching data.</div>
         ) : hero ? (
-          <div className="flex flex-col font-comic">
-            <div className="text-center text-2xl text-action">{hero.name}</div>
-            <div className="flex flex-col sm:flex-row">
+          <div className="flex flex-col font-comic rounded bg-action ">
+            <div className=" text-2xl ml-24 text-white">{hero.name}</div>
+            <div className="flex flex-col xs:flex-row  ">
               <div className="bg-action">
-                <img className="w-72" src={hero.image.url} />
+                <LazyLoadImage className="w-72" src={hero.image.url} loading="lazy" />
                 <div className="text-center items-center text-action">
                   Stats
                   <PowerStats stats={hero.powerstats} />
@@ -98,8 +98,8 @@ export function HeroPage() {
         ) : null}
       </Body>
       <Footer>
-        <p>Made in ali's room</p>
-        <a href="">
+      <p>Made in ali's room</p>
+        <a href="https://github.com/AliKaner/hero-wiki">
             u can look to repo 2
         </a>
       </Footer>

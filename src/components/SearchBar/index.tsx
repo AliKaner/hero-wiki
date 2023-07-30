@@ -10,9 +10,9 @@ export function SearchBar({
     onClear?: () => void;
 }) {
     return (
-        <div className='flex flex-row ml-20 min-w-fit w-1/2 items-center align-middle justify-items-center'>
+        <div className='flex flex-row xs:ml-4  w-1/2 items-center align-middle justify-items-center'>
             <input
-                className='text-action outline-none font-comic justify-self-start pl-4 p-2 flex-auto rounded-l-full border border-action'
+                className='text-action outline-none font-comic justify-self-start xs:pl-4 xs:p-2 flex-auto rounded-l-full border border-action'
                 type="text"
                 value={value}
                 onChange={onChange}
@@ -20,7 +20,7 @@ export function SearchBar({
             />
             {onClear && (
                 <button
-                    className="flex-none font-comic text-left border border-action rounded-r-full pr-4 p-2 text-white bg-action"
+                    className="flex-none font-comic text-left border border-action rounded-r-full xs:pr-4 xs:p-2 text-white bg-action"
                     onClick={onClear} 
                 >
                     Clear
