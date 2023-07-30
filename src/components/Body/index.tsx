@@ -7,7 +7,7 @@ export function Body(props: React.PropsWithChildren<unknown>) {
   return (
     <div
       className={`flex min-w-full flex-col w-full p-4 items-center ${
-        theme ? "bg-secondary" : "bg-darkSecondary"
+        theme==="light" ? "bg-secondary" : "bg-darkSecondary"
       }`}
     >
       {props.children}

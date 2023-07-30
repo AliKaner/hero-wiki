@@ -9,6 +9,7 @@ import HomeButton from "../../components/HomeButton";
 import { PowerStats } from "../../components/PowerStats";
 import { Footer } from "../../components/Footer";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ThemeSwitch from "../../components/ThemeSwitch";
 export function HeroPage() {
   const { id } = useParams();
   const [hero, setHero] = useState<HeroType | null>(null);
@@ -26,7 +27,10 @@ export function HeroPage() {
   return (
     <Layout>
       <Header>
-        <HomeButton />
+        <div className="flex flex-1 flex-row justify-between">
+          <HomeButton />
+          <ThemeSwitch />
+        </div>
       </Header>
       <Body>
         {isLoading ? (
@@ -38,20 +42,26 @@ export function HeroPage() {
             <div className=" text-2xl ml-24 text-white">{hero.name}</div>
             <div className="flex flex-col xs:flex-row  ">
               <div className="bg-action">
-                <LazyLoadImage className="w-72" src={hero.image.url} loading="lazy" />
+                <LazyLoadImage
+                  className="w-72"
+                  src={hero.image.url}
+                  loading="lazy"
+                />
                 <div className="text-center items-center text-action">
                   Stats
                   <PowerStats stats={hero.powerstats} />
                 </div>
               </div>
               <div className="w-72 text-xl bg-action text-white text-center">
-                <h2 className="text-4xl" >Appearance</h2>
+                <h2 className="text-4xl">Appearance</h2>
                 <div className="text-left pl-2">
                   <p>race: {hero.appearance.race}</p>
                   <div>
                     <span className="text-white">eye color: </span>
                     <span
-                      className={`text-${hero.appearance["eye-color"].toLowerCase()}-400`}
+                      className={`text-${hero.appearance[
+                        "eye-color"
+                      ].toLowerCase()}-400`}
                     >
                       {hero.appearance["eye-color"]}
                     </span>
@@ -59,7 +69,11 @@ export function HeroPage() {
                   <p>gender: {hero.appearance.gender}</p>
                   <div>
                     <span className="text-white">hair color: </span>
-                    <span className={`text-${hero.appearance["hair-color"].toLowerCase()}-400`}>
+                    <span
+                      className={`text-${hero.appearance[
+                        "hair-color"
+                      ].toLowerCase()}-400`}
+                    >
                       {hero.appearance["hair-color"]}
                     </span>
                   </div>
@@ -89,8 +103,8 @@ export function HeroPage() {
                 </div>
                 <h2 className="text-4xl">work</h2>
                 <div className="text-left">
-                    <p>ccupation: {hero.work.occupation}</p>
-                    <p>ccupation: {hero.work.base}</p>
+                  <p>ccupation: {hero.work.occupation}</p>
+                  <p>ccupation: {hero.work.base}</p>
                 </div>
               </div>
             </div>
@@ -98,10 +112,8 @@ export function HeroPage() {
         ) : null}
       </Body>
       <Footer>
-      <p>Made in ali's room</p>
-        <a href="https://github.com/AliKaner/hero-wiki">
-            u can look to repo 2
-        </a>
+        <p>Made in ali's room</p>
+        <a href="https://github.com/AliKaner/hero-wiki">u can look to repo 2</a>
       </Footer>
     </Layout>
   );

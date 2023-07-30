@@ -9,6 +9,7 @@ import { SearchBar } from "../../components/SearchBar";
 import { HeroShowCase } from "../../components/HeroShowCase";
 import { useGetHeros } from "../../hooks/useGetHeros";
 import { Footer } from "../../components/Footer";
+import ThemeSwitch from "../../components/ThemeSwitch";
 
 export function HomePage() {
   const [params] = useSearchParams();
@@ -26,11 +27,14 @@ export function HomePage() {
     <Layout>
       <Header>
         <HomeButton />
-        <SearchBar
-          value={search}
-          onChange={onSearchChange}
-          onClear={() => setSearch("")}
-        />
+        <div className="flex flex-1 flex-row justify-between">
+          <SearchBar
+            value={search}
+            onChange={onSearchChange}
+            onClear={() => setSearch("")}
+          />
+          <ThemeSwitch />
+        </div>
       </Header>
       <Body>
         <HeroShowCase heros={heros ?? []} />
