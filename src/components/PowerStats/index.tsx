@@ -20,24 +20,21 @@ ChartJS.register(
 );
 
 export function PowerStats({ stats }: { stats: PowerstatsType }) {
-  function DataBuilder({ stats }: { stats: PowerstatsType }) {
-    return {
-      labels: ["INT", "STR", "HEX", "CON", "POW", "COM"],
-      datasets: [
-        {
-          label: "points",
-          data: Object.values(stats),
-          backgroundColor: "rgb(5, 166, 225,0.7)",
-          borderColor: "#2a335e",
-          borderWidth: 2,
-        },
-      ],
-    };
-  }
-
+  const data = {
+    labels: ["INT", "STR", "HEX", "CON", "POW", "COM"],
+    datasets: [
+      {
+        label: "points",
+        data: Object.values(stats),
+        backgroundColor: "rgb(5, 166, 225,0.7)",
+        borderColor: "#2a335e",
+        borderWidth: 2,
+      },
+    ],
+  };
   return (
     <div className=" w-72 h-72 text-calm">
-      <Radar data={DataBuilder({ stats })} />
+      <Radar data={data} />
     </div>
   );
 }
