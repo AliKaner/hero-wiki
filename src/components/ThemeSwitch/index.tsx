@@ -6,7 +6,7 @@ export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`p-2 border rounded-full border-action bg-action` } >
+    <div className={`p-2 border rounded-full border-action bg-action mr-2 xs:mr-8` } >
       {theme === 'light' ? (
         <MoonIcon
           className="h-6 w-6 text-white cursor-pointer"
