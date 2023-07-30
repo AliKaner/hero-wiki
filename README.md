@@ -1,6 +1,6 @@
-# React + TypeScript + Vite
+# HERO WIKI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun project with Superhero API
 
 Currently, two official plugins are available:
 
