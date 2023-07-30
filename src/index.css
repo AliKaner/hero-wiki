@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Comic;
+    src: url("./assets/fonts/Comic.TTF") format('opentype');
+}
+
+@font-face {
+    font-family: Spider;
+    src: url("./assets/fonts/Spiderman.ttf") format('opentype');
+}
